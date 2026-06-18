@@ -1,0 +1,38 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/libaray_db
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 105627
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      password:
+      database: 0
+      timeout: 5000ms
+      lettuce:
+        pool:
+          max-active: 20
+          max-idle: 10
+          min-idle: 5
+jwt:
+  secret: library_jwt_secret_key_2024_super_secure_long_enough
+  expire: 3600000
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations: classpath:mapper/*.xml
+#      jedis:
+#        pool:
+#          max-active: 8
+#          max-idle: 8
+#          min-idle: 0
